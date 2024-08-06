@@ -10,28 +10,28 @@ const Header = () => {
     };
 
     return (
-        <header className=" bg-slate-400 border border-blue-600 p-4 sm:flex justify-between">
-            <div className="flex justify-between items-center">
-                <div className="w-28 h-10 border border-red-300">
-                    <img src="" alt="Logo" />
-                </div>
-                <img 
-                    className="w-10 h-10 cursor-pointer sm:hidden" 
-                    src={menuOpen ? iconCerrar : iconMenu} 
-                    alt="menu_icon" 
-                    onClick={handleClick} 
-                />
+        <header className="w-full h-20 bg-slate-500 flex gap-4 justify-between px-2 py-5 border border-blue-600">
+    
+            <div className="w-32 border-2 border-red-300">
+                <img src={ menuOpen.src} alt="" />
             </div>
 
-            <nav className={`absolute top-7 left-0 w-full bg-slate-400 border border-lime-300 py-3 px-2 transition-transform duration-300 ease-in-out ${menuOpen ? 'transform translate-y-9' : 'transform -translate-y-full'} sm:static sm:transform-none sm:flex`}>
-                <ul className="flex flex-col gap-6 sm:flex-row sm:gap-4">
-                    <li className='text-yellow-100 font-medium tracking-wide text-xl'><a href="#">Servicios</a></li>
-                    <li className='text-yellow-100 font-medium tracking-wide text-xl'><a href="#">Unidades</a></li>
-                    <li className='text-yellow-100 font-medium tracking-wide text-xl'><a href="#">Viajes</a></li>
-                    <li className='text-yellow-100 font-medium tracking-wide text-xl'><a href="#">Cotizador</a></li>
-                    <li className='text-yellow-100 font-medium tracking-wide text-xl'><a href="#">Contacto</a></li>
+            <nav className={`sm:block absolute left-0  bg-slate-500 w-full px-2 duration-300 ${menuOpen ? 'top-[13%]' : 'top-[-100%] z-[-1]' }`}>
+                <ul className='flex flex-col border border-red-400 gap-6 sm:flex-row'>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Unidades</a></li>
+                    <li><a href="#">Viajes</a></li>
+                    <li><a href="#">cotizador</a></li>
+                    <li><a href="#">Contacto</a></li>
+
                 </ul>
             </nav>
+
+
+            <div className='w-32 sm:hidden'>
+                <img src={ menuOpen ? iconCerrar.src : iconMenu.src} alt="" id="logo" onClick={ () => setMenuOpen(!menuOpen) } />
+            </div>
+
         </header>
     );
 };
