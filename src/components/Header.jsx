@@ -10,29 +10,37 @@ const Header = () => {
     };
 
     return (
-        <header className="w-full h-20 bg-slate-500 flex gap-4 justify-between px-2 py-5 border border-blue-600">
+        <header className="w-full h-20 bg-slate-500 flex flex-col sm:flex-row justify-between py-5">
     
-            <div className="w-32 border-2 border-red-300">
-                <img src={ menuOpen.src} alt="" />
+        <picture className="flex justify-between">
+            <div className='w-32 border border-red-300'>
+                <img src={iconCerrar.src} alt="" />
             </div>
 
-            <nav className={`sm:block absolute left-0  bg-slate-500 w-full px-2 duration-300 ${menuOpen ? 'top-[13%]' : 'top-[-100%] z-[-1]' }`}>
-                <ul className='flex flex-col border border-red-400 gap-6 sm:flex-row'>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Unidades</a></li>
-                    <li><a href="#">Viajes</a></li>
-                    <li><a href="#">cotizador</a></li>
-                    <li><a href="#">Contacto</a></li>
-
-                </ul>
-            </nav>
-
-
-            <div className='w-32 sm:hidden'>
-                <img src={ menuOpen ? iconCerrar.src : iconMenu.src} alt="" id="logo" onClick={ () => setMenuOpen(!menuOpen) } />
+            <div className='w-32 border border-red-300 sm:hidden'>
+                <img
+                    onClick={ handleClick }
+                    src={iconMenu ? iconCerrar.src: iconMenu.src} 
+                    alt=""
+                
+                />
             </div>
+        </picture>
 
-        </header>
+        <nav className={`bg-slate-500 p-4 duration-300 ease-linear absolute top-[-100%] sm:top-0 sm:w-auto sm:border left-0 w-full sm:relative ${menuOpen && 'top-[13%]'}`}>
+            <ul className='flex flex-col gap-4 sm:flex-row'>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Unidades</a></li>
+                <li><a href="#">Viajes</a></li>
+                <li><a href="#">cotizador</a></li>
+                <li><a href="#">Contacto</a></li>
+
+            </ul>
+        </nav>
+
+        
+
+</header>
     );
 };
 
