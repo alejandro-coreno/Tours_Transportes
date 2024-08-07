@@ -1,1 +1,8 @@
-<h1>Servicios Astro</h1>
+---
+    import Header from "../components/Header"
+    import Layout from "../layouts/layout.astro"
+---
+<Layout>
+    <Header client:load/>
+    <h1>Servicios Astro</h1>
+</Layout>
