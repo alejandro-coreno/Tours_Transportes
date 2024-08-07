@@ -6,6 +6,5 @@
     .h-custom {
         height: calc(100vh - 5rem);
         border: 2px solid forestgreen;
-    }
-    
+    }    
 }

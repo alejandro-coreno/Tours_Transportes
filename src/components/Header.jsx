@@ -1,47 +1,40 @@
 import { useState } from 'react';
 import iconMenu from '../img/icons/icon_menu.png';
-import logo from "../img/icons/logo.png"
-import iconCerrar from '../img/icons/icon_cerrar.png';
-import "../styles/styles.css"
+import iconCerrar from "../img/icons/icon_cerrar.png";
+import logo from "../img/icons/logo.png";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const handleClick = () => {
-        setMenuOpen(!menuOpen);
+        setMenuOpen(!menuOpen)
     };
 
     return (
-        <header className="w-full h-20 bg-slate-500 flex flex-col  sm:flex-row justify-between shadow-md">
-    
-        <div className="flex h-full items-center border border-blue-400 justify-between px-3">
-            <div className='w-20 border rounded-md '>
-                <img src={logo.src} alt="" className='w-20 bg-contain bg-center  rounded-md' />
-            </div>
-
-            <div className='w-20 border border-red-300 sm:hidden'>
-                <img
-                    onClick={ handleClick }
-                    src={menuOpen ? iconCerrar.src: iconMenu.src} 
-                    alt=""
-                
+        <header className="bg-slate-300 z-[-1] flex-col gap-3 justify-between flex sm:flex-row border border-blue-600 p-4">
+            <div className="flex justify-between items-center">
+                <div className="w-20">
+                    <img src={logo.src} alt="Logo" className='w-20 bg-contain rounded-md'/>
+                </div>
+                <img 
+                    className="w-10 cursor-pointer sm:hidden" 
+                    src={ menuOpen ? iconCerrar.src : iconMenu.src } 
+                    alt="Menu icon" 
+                    onClick={handleClick} 
                 />
             </div>
-        </div>
 
-        <nav className={` bg-indigo-400 p-4 duration-300 ease-linear absolute top-[8.9%] h-custom sm:top-0 sm:w-auto sm:border right-[-100%] w-[80%] sm:relative sm:h-auto ${menuOpen && 'right-[-0]'}`}>
-            <ul className='flex flex-col gap-4 sm:flex-row'>
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Unidades</a></li>
-                <li><a href="#">Viajes</a></li>
-                <li><a href="#">cotizador</a></li>
-                <li><a href="#">Contacto</a></li>
-
-            </ul>
-        </nav>
-</header>
+            <nav className={`border border-lime-300 py-3 px-2 sm:block ${menuOpen ? ' block' : ' hidden'}`}>
+                <ul className="flex flex-col gap-5 sm:flex-row sm:gap-4">
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#unidades">Unidades</a></li>
+                    <li><a href="#">Viajes</a></li>
+                    <li><a href="#">Cotizador</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </header>
     );
 };
 
 export default Header;
-
