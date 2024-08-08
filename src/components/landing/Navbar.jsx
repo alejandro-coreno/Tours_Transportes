@@ -27,7 +27,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className={`bg-gradient-to-r from-[#0d161c] to-[#1e324d] p-6 duration-500 ease-in absolute top-[-400px] sm:top-0 sm:w-auto left-0 
+            <div className={`bg-gradient-to-r from-[#0d161c] to-[#1e324d] p-6 duration-200 ease-in absolute top-[-400px] sm:top-0 sm:w-auto left-0 
                 w-full sm:static ${menuOpen && 'top-[80px] opacity-100'}`}>
                 <ul className='flex flex-col gap-5 sm:flex-row'>
                     <li className='text-white font-light tracking-wide'><a href="#">Servicios</a></li>
