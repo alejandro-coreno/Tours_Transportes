@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import iconMenu from '../img/icons/icon_menu_F.png';
-import iconCerrar from '../img/icons/icon_cancelarF.png';
-import logo from '../img/icons/logo.png';
+import iconMenu from '../../img/icons/icon_menu.png'
+import logo from '../../img/icons/logo.png';
+import iconCerrar from '../../img/icons/icon_cancelar.png';
 
-const Header = () => {
+const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const handleClick = () => {
@@ -11,7 +11,7 @@ const Header = () => {
     };
 
     return (
-        <header className="bg-[#25324e] shadow sm:flex justify-between py-5">
+        <nav className="bg-[#253444] shadow sm:flex justify-between py-5">
             <div className="flex justify-between px-3">
                 <div className='cursor-pointer'>
                     <img src={logo.src} alt="" className='h-14 rounded-md' />
@@ -27,8 +27,8 @@ const Header = () => {
                 </div>
             </div>
 
-            <nav className={`bg-[#25324e] p-6 duration-500 ease-in absolute top-[-400px] sm:top-0 sm:w-auto sm:border left-0 
-                w-full sm:relative transition-all ${menuOpen && 'top-[80px] opacity-100'}`}>
+            <div className={`bg-[#233253] p-6 duration-500 ease-in absolute top-[-400px] sm:top-0 sm:w-auto left-0 
+                w-full sm:static transition-all ${menuOpen && 'top-[80px] opacity-100'}`}>
                 <ul className='flex flex-col gap-4 sm:flex-row'>
                     <li className='text-white font-light tracking-wide'><a href="#">Servicios</a></li>
                     <li className='text-white font-light tracking-wide'><a href="#">Unidades</a></li>
@@ -36,10 +36,9 @@ const Header = () => {
                     <li className='text-white font-light tracking-wide'><a href="#">Cotizador</a></li>
                     <li className='text-white font-light tracking-wide'><a href="#">Contacto</a></li>
                 </ul>
-            </nav>        
-        </header>
-
+            </div>        
+        </nav>
     );
 };
 
-export default Header;
+export default Navbar;
