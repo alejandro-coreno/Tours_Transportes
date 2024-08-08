@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import iconMenu from '../../img/icons/icon_menu.png';
-import logo2 from '../../img/icons/logo.jpeg';
-import logo from '../../img/icons/logo.png';
-import logo3 from '../../img/icons/logo3.jpeg';
 import logo4 from '../../img/icons/logo4.svg';
 import iconCerrar from '../../img/icons/icon_cancelar.png';
 
@@ -17,7 +14,7 @@ const Navbar = () => {
         <nav className="bg-gradient-to-r from-[#0d161c] to-[#1e324d] shadow-2xl sm:flex justify-between py-5">
             <div className="flex justify-between px-3">
                 <div className={`cursor-pointer ml-4 duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0'}`}>
-                    <img src={logo4.src} alt="" className='h-12' />
+                    <img src={logo4.src} alt="" className='h-12 animate-pulse' />
                 </div>
 
                 <div className='p-2 cursor-pointer sm:hidden'>
@@ -39,6 +36,7 @@ const Navbar = () => {
                     <li className='text-white font-light tracking-wide'><a href="#">Cotizador</a></li>
                     <li className='text-white font-light tracking-wide'><a href="#">Contacto</a></li>
                 </ul>
+
             </div>        
         </nav>
     );
