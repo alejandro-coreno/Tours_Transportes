@@ -1,6 +1,9 @@
 import { useState } from 'react';
-import iconMenu from '../../img/icons/icon_menu.png'
+import iconMenu from '../../img/icons/icon_menu.png';
+import logo2 from '../../img/icons/logo.jpeg';
 import logo from '../../img/icons/logo.png';
+import logo3 from '../../img/icons/logo3.jpeg';
+import logo4 from '../../img/icons/logo4.svg';
 import iconCerrar from '../../img/icons/icon_cancelar.png';
 
 const Navbar = () => {
@@ -11,10 +14,10 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="bg-[#253444] shadow sm:flex justify-between py-5">
+        <nav className="bg-gradient-to-r from-[#0d161c] to-[#1e324d] shadow-2xl sm:flex justify-between py-5">
             <div className="flex justify-between px-3">
-                <div className='cursor-pointer'>
-                    <img src={logo.src} alt="" className='h-14 rounded-md' />
+                <div className={`cursor-pointer ml-4 duration-300 ${menuOpen ? 'opacity-100' : 'opacity-0'}`}>
+                    <img src={logo4.src} alt="" className='h-12' />
                 </div>
 
                 <div className='p-2 cursor-pointer sm:hidden'>
@@ -27,9 +30,9 @@ const Navbar = () => {
                 </div>
             </div>
 
-            <div className={`bg-[#233253] p-6 duration-500 ease-in absolute top-[-400px] sm:top-0 sm:w-auto left-0 
-                w-full sm:static transition-all ${menuOpen && 'top-[80px] opacity-100'}`}>
-                <ul className='flex flex-col gap-4 sm:flex-row'>
+            <div className={`bg-gradient-to-r from-[#0d161c] to-[#1e324d] p-6 duration-500 ease-in absolute top-[-400px] sm:top-0 sm:w-auto left-0 
+                w-full sm:static ${menuOpen && 'top-[80px] opacity-100'}`}>
+                <ul className='flex flex-col gap-5 sm:flex-row'>
                     <li className='text-white font-light tracking-wide'><a href="#">Servicios</a></li>
                     <li className='text-white font-light tracking-wide'><a href="#">Unidades</a></li>
                     <li className='text-white font-light tracking-wide'><a href="#">Viajes</a></li>
