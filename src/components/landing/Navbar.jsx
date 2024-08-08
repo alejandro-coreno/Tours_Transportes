@@ -36,7 +36,6 @@ const Navbar = () => {
                     <li className='text-white font-light tracking-wide'><a href="#">Cotizador</a></li>
                     <li className='text-white font-light tracking-wide'><a href="#">Contacto</a></li>
                 </ul>
-
             </div>        
         </nav>
     );
