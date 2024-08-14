@@ -1,24 +1,22 @@
 ---
-    
+    import tours from '../../video/tours_transportes.mp4';
 ---
 
-<section id="servicios" class="border-red-500 h-screen flex gap-5 border sm:flex-row flex-col justify-center items-center p-8">
+<section id="servicios" class="border-red-500 flex gap-5 border sm:flex-row flex-col justify-center items-center p-8">
 
     <h1 class="text-3xl font-medium mb-4 text-center tracking-wide text-[#1e324d]">Servicios</h1>
 
-    <div class="flex flex-col gap-4">
-        <div class="w-full h-72">
-            <!-- <video src="https://youtube.com/shorts/-2vZhzmMAjk?feature=share"
-            autoplay controls 
-            class="w-full h-full"></video> -->
-            <iframe class="w-full h-full shadow-md rounded-md" src="https://www.youtube.com/embed/-2vZhzmMAjk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+    <div class="flex flex-col gap-6">
+        <div class="w-full">
+            <video class="w-full rounded-md shadow-md" controls>
+                <source src={ tours } type="video/mp4" title="tours y transporte coreño"></video>
+            </video>
         </div>
     
         <div class="flex flex-col gap-1">
             <h2 class="text-xl text-[#1e324d] font-bold tracking-wide">Mas info</h2>
             <p class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae labore saepe inventore minus enim harum incidunt maiores! Eos, expedita nisi? Natus quas inventore neque accusamus animi sit, esse iusto explicabo?</p>
         </div>
-
     </div>
 
 </section>
