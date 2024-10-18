@@ -2,9 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-    .enlaces {
-        height: calc(100vh - 5rem);
-        border: 2px solid forestgreen;
-    }    
-}
